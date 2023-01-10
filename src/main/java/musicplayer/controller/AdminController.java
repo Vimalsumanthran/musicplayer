@@ -6,10 +6,7 @@ import musicplayer.exception.ResourceNotFoundException;
 import musicplayer.form.UserForm;
 import musicplayer.repository.PurchaseRequestRepository;
 import musicplayer.repository.UserRepository;
-import musicplayer.service.CartService;
-import musicplayer.service.MasterGenderService;
-import musicplayer.service.UserRegAppService;
-import musicplayer.service.UserService;
+import musicplayer.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -40,6 +37,8 @@ public class AdminController {
 
     @Autowired
     private PurchaseRequestRepository purchaseRequestRepository;
+    @Autowired
+    private SongGenreService songGenreService;
 
 
     @GetMapping("/admin/user-reg-apps")
@@ -195,6 +194,13 @@ public class AdminController {
         theModel.addAttribute("song", theSong);
 
         return "song-form";
+    }
+    @ModelAttribute("genreDetailsList")
+    public List<SongGenre> getGenreDetailsList()
+    {
+        List<SongGenre> genreDetailsList = this.songGenreService.getGenres();
+
+        return genreDetailsList;
     }
 
 }

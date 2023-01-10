@@ -36,8 +36,6 @@ public class CartService  {
     @Autowired
     UserService userService;
 
-
-
     @Transactional
     public void addSongToCart(Long theSongId) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

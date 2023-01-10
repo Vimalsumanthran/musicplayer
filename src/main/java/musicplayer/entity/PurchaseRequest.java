@@ -53,7 +53,7 @@ public class PurchaseRequest {
     @Column(name = "status")
     private int status;
 
-    @Column(name="created_on",columnDefinition="DATETIME DEFAULT NOW()")
+    @Column(name="created_on")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdOn;
 

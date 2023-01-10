@@ -41,7 +41,7 @@
 
       </c:forEach>
       <tr>
-        <td colspan=5 class="text-right">Total Amount : &#x20b9; ${total}</td>
+        <td colspan=6 class="text-right">Total Amount : &#x20b9; ${total}</td>
       <tr>
 
      </table>

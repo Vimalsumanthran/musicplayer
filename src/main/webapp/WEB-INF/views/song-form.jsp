@@ -20,7 +20,7 @@
       <jsp:include page="/WEB-INF/views/headers/loginHeader.jsp" />
       <div class="container full-width">
          <div class="col-md-offset-2 col-md-8">
-          <form:form action="saveSong" cssClass="form-horizontal"
+          <form:form action="${contextPath}/song/saveSong" cssClass="form-horizontal"
                               method="post" modelAttribute="song" enctype="multipart/form-data">
             <div class="panel panel-info">
                <div class="panel-heading">
